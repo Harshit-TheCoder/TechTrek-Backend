@@ -13,4 +13,7 @@ def create_app():
     from app.controllers.question_controller import question_bp
     app.register_blueprint(question_bp)
 
+    from app.controllers.user_controller import user_bp
+    app.register_blueprint(user_bp)
+
     return app
