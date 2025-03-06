@@ -7,6 +7,7 @@ mongo = PyMongo()
 def create_app():
 
     app = Flask(__name__)
+    app.secret_key = "harshit-thecoder"
     app.config.from_object(Config)
     mongo.init_app(app)
 
@@ -27,5 +28,9 @@ def create_app():
 
     from app.controllers.feedback_controller import feedback_bp
     app.register_blueprint(feedback_bp)
+
+    from app.controllers.cheating_controller import cheating_bp
+    app.register_blueprint(cheating_bp)
+
 
     return app

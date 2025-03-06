@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
+    <script>
+        async function startDetection() {
+            const response = await fetch('/detect_cheating');
+            const data = await response.json();
+            document.getElementById("warning_count").innerText = "Warnings: " + data.warnings;
+            
+            if (data.warnings >= 5) {
+                alert("Exam session ended due to cheating!");
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Welcome to the Flask MVC App</h1>
+    <h1>Exam Proctoring System</h1>
+    <button onclick="startDetection()">Start Face Detection</button>
+    <p id="warning_count">Warnings: 0</p>
 </body>
 </html>
