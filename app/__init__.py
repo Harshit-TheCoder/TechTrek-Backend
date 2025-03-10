@@ -14,6 +14,9 @@ def create_app():
     from app.controllers.question_controller import question_bp
     app.register_blueprint(question_bp)
 
+    from app.controllers.mcq_question_controller import mcq_bp
+    app.register_blueprint(mcq_bp)
+
     from app.controllers.user_controller import user_bp
     app.register_blueprint(user_bp)
 
@@ -32,5 +35,16 @@ def create_app():
     from app.controllers.cheating_controller import cheating_bp
     app.register_blueprint(cheating_bp)
 
+    from app.controllers.codeChecker_controller import code_bp
+    app.register_blueprint(code_bp)
+
+    from app.controllers.chatbot_controller import chatbot_bp
+    app.register_blueprint(chatbot_bp)
+
+    from app.controllers.qselect_controller import qselect_bp
+    app.register_blueprint(qselect_bp)
+
+    from app.controllers.mcq_question_select_controller import mcqselect_bp
+    app.register_blueprint(mcqselect_bp)
 
     return app

@@ -4,6 +4,11 @@ from app.models.users import User
 class Test:
 
     @staticmethod
+    def insert_test_data(data):
+        db = get_db()
+        db.test_details.insert_one(data)
+
+    @staticmethod
     def insert_one(data):
         db = get_db()
         db.user_test_details.insert_one(data)
