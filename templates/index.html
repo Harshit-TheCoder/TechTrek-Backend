@@ -20,5 +20,28 @@
     <h1>Exam Proctoring System</h1>
     <button onclick="startDetection()">Start Face Detection</button>
     <p id="warning_count">Warnings: 0</p>
+
+
+    <div class="container">
+        <form action="/code_checker" method="POST">
+            <label for="question">Question:</label>
+            <input type="text" name="question" required>
+            
+            <label for="language">Language:</label>
+            <select name="language">
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+            </select>
+        
+            <label for="code">Code:</label>
+            <textarea name="code" rows="10"></textarea>
+        
+            <button type="submit">Check Code</button>
+        </form>
+    </div>
+
+
 </body>
 </html>
